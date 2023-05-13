@@ -72,6 +72,7 @@ module.exports.selectConversation = async (page, recipient) => {
       '.newConversationTextField',
   );
   await page.waitForTimeout(500);
+  console.log(`Recipient: ${recipient}`);
   await recipientField.type(recipient);
   await page.waitForTimeout(500);
   await page.keyboard.press('Enter');
@@ -86,6 +87,7 @@ module.exports.selectConversation = async (page, recipient) => {
 module.exports.sendMessage = async (page, message) => {
   const messageField = await page.waitForSelector('#text-input');
   await page.waitForTimeout(500);
+  console.log(`Message: ${message}`);
   await messageField.type(message);
   await page.waitForTimeout(500);
   await page.keyboard.press('Enter');
