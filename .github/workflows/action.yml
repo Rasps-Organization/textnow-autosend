@@ -9,6 +9,7 @@ on:
 jobs:
   autosend:
     runs-on: ubuntu-latest
+    environment: autosend
     steps:
       - name: Checkout
         uses: actions/checkout@v2
